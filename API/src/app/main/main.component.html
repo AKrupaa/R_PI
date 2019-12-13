@@ -1,0 +1,17 @@
+<p>main works!</p>
+
+
+
+<!-- <button (mousedown)="whileClick()" (mouseup)="notClicked()"> UP </button> -->
+
+<mat-slider min="0" max="255" step="5" value="128" #moveHorizontal (change)="onChangeHorizontal(moveHorizontal.value)" >Horizontal</mat-slider>
+<!-- Stworzenie slidera na stronie odpowiadających za ruch lewo-prawo -->
+<mat-slider min="0" max="255" step="5" value="128" #moveVertical (change)="onChangeVertical(moveVertical.value)" >Vertical</mat-slider>
+<!-- Stworzenie slidera na stronie odpowiadających za ruch góra-dół -->
+<button (click)="logout()"> Log out </button>
+<!-- Wywołanie metody logout() podczas kliknięcia na tag <button> -->
+
+<!-- <form>, <div> <label> <input> <button> <p> => tagi HTML -->
+<!-- class, src, alt, type, placeholder => atrybuty HTML -->
+<!-- .css język służący do opisu formy prezentacji (wyświetlania) stron WWW  znajdziemy w login.component.css -->
+<ngfx-surface [controller]="'dualJoySticks'"></ngfx-surface>

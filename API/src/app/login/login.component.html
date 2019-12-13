@@ -1,0 +1,34 @@
+<form>
+  <div class="imgcontainer">
+    <img src="assets/avatar_login.png" alt="Avatar" class="avatar">
+    <!-- Wrzucenie obrazka, gdzie jego źródło się w ./assets -->
+  </div>
+
+  <div class="container">
+    <label><b>Username</b></label>
+    <input #uname type="text" placeholder="Enter Username" (keydown.enter)="$event.preventDefault()">
+    <!-- #uname => zmienna, w której będziemy przechowywać string dot. nazwy użytkowanika -->
+    <!-- (keydown.enter)="$event.preventDefault()"  =>  wyłącza klawisz "Enter" na klawiaturze klienta -->
+    <!-- podczas wpisywania nazwy użytkownika aby nie przesłać pustego pola "Password" -->
+
+    <label><b>Password</b></label>
+    <input #pswd type="password" placeholder="Enter Password" (keydown.enter)="$event.preventDefault()">
+    <!-- #pswd => zmienna, w której będziemy przechowywać string dot. hasła użytkowanika -->
+    <!-- (keydown.enter)="$event.preventDefault()" => wyłącza klawisz "Enter" na klawiaturze klienta -->
+    <!-- podczas wpisywania hasła użytkownika aby zapobiec wysłania pustych zmiennych #uname #pswd -->
+    <!-- zmienne #uname i #pswd będą wysyłane poprawnie dopiero podczas kliknięcia na przycisk "Login" lewym przyciskiem myszy -->
+    <button (mousedown)="button_onClick(uname.value, pswd.value)" type='button'>Login</button>
+    <!-- (mousedown)="button_onClick(uname.value, pswd.value) => wywołanie eventu Angulara i przesłanie -->
+    <!-- #uname #pswd do odpowiedniej metody: button_onClick(..., ...) -->
+  </div>
+
+  <!-- <div class="container" style="background-color:#f1f1f1"> -->
+    <!-- <button class="cancelbtn" (keydown.enter)="$event.preventDefault()" (click)="$event.preventDefault()">Cancel</button> -->
+<!-- You will not be able to see this text.     <span class="psw">Forgot <a href="#">password?</a></span> -->
+  <!-- </div> -->
+</form>
+
+
+<!-- <form>, <div> <label> <input> <button> => tagi HTML -->
+<!-- class, src, alt, type, placeholder => atrybuty HTML -->
+<!-- .css język służący do opisu formy prezentacji (wyświetlania) stron WWW  znajdziemy w login.component.css -->

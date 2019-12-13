@@ -1,0 +1,9 @@
+<app-login *ngIf="flaga" (flaga)="flaga = $event"></app-login>
+<!-- app-login => odniesienie do wygenerowania strony interenetowej na podstawie komponentu login -->
+<!-- Słowo kluczowe "*ngIf" w Angularze dostępny/gotowy do użycia w HTML jako instrukcja warunkowa If()  -->
+<!-- Warunek sprawdza czy istnieje zmienna oznaczająca flagę o nazwie "flaga" -->
+<!-- Występowanie "flaga == true" następuje zniszczenie komponentu <app-login> i wygenerowanie <app-main> -->
+<!-- (flaga) jest to obiekt klasy EventEmitter pozwalającą na dostarczanie zdarzenia synchronicznie lub asynchronicznie -->
+<!-- potrzebna do generowania lub niszczenia odpowiednich komponentów -->
+<app-main *ngIf="!flaga" (flaga)="flaga = $event"></app-main>
+<!-- patrz: wyżej -->
